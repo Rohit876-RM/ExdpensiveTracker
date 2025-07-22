@@ -1,0 +1,7 @@
+        search_fr = ttk.Frame(self.root)
+        search_fr.pack(pady=5)
+        ttk.Label(search_fr, text="🔍 Search Description:").grid(row=0, column=0, padx=5)
+        self.search_var = tk.StringVar()
+        search_entry = ttk.Entry(search_fr, textvariable=self.search_var, style="Rounded.TEntry", width=30)
+        search_entry.grid(row=0, column=1, padx=5)
+        self.search_var.trace("w", lambda *args: self.live_search())
